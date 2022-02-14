@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
+import os
+
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,7 +25,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-t)l-l!b_z=9#r)dzkx67!d0$i2s$n@oy_9-1q+j615&tex+oem'
+# SECRET_KEY = 'django-insecure-t)l-l!b_z=9#r)dzkx67!d0$i2s$n@oy_9-1q+j615&tex+oem'
+SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -133,5 +139,13 @@ STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
+
+#jitsi variables
+JITSI_URL = 'https://meet.jit.si/'
+JITSI_API_KEY = 'c9f8b8f9-b8f9-4f9f-b8f9-b8f9b8f9b8f9'
+JITSI_ROOM_NAME = 'tap-academy'
+JITSI_ROOM_PASSWORD = 'tap-academy'
+
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
