@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 from dotenv import load_dotenv
 import os
-import django_heroku
+import django_on_heroku
 
 
 load_dotenv()
@@ -152,4 +152,4 @@ JITSI_ROOM_PASSWORD = 'tap-academy'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-django_heroku.settings(locals())
+django_on_heroku.settings(locals())
